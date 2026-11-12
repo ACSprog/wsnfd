@@ -1,0 +1,161 @@
+{
+  "info": {
+    "source": "intel",
+    "selection_rule_passed": true,
+    "rows_read": 2303286,
+    "motes_in_file": 54,
+    "ignored_rows_bad_moteid": 9866,
+    "t0": "2004-02-28 00:58:43",
+    "start_bin": 0,
+    "grid_s": 31,
+    "xy": [
+      [
+        19.5,
+        19.0
+      ],
+      [
+        21.5,
+        2.0
+      ],
+      [
+        4.5,
+        30.0
+      ],
+      [
+        10.5,
+        31.0
+      ],
+      [
+        12.5,
+        26.0
+      ],
+      [
+        15.5,
+        28.0
+      ],
+      [
+        26.5,
+        31.0
+      ],
+      [
+        40.5,
+        22.0
+      ],
+      [
+        39.5,
+        14.0
+      ],
+      [
+        35.5,
+        10.0
+      ]
+    ],
+    "n_nodes": 10,
+    "n_epochs": 78036,
+    "nodes": [
+      3,
+      9,
+      25,
+      28,
+      29,
+      31,
+      36,
+      44,
+      47,
+      48
+    ]
+  },
+  "config": {
+    "grid_s": 31,
+    "temp_min": 10.0,
+    "temp_max": 40.0,
+    "hum_min": 5.0,
+    "hum_max": 95.0,
+    "dead_voltage": 2.2,
+    "max_gap_bins": 5,
+    "min_nodes": 10,
+    "min_days": 28.0,
+    "min_coverage": 0.8,
+    "train_frac": 0.28,
+    "fault_rate": 0.2,
+    "mag_scale": 1.0,
+    "transition_days": 5.0,
+    "roll_window": 10,
+    "knn": 5,
+    "feature_set": "FS-B",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "min_samples_leaf": 1,
+    "period_days": 1.0,
+    "window_days": 3.0,
+    "adwin_delta": 0.002,
+    "cooldown_batches": 24,
+    "prefill_buffer": true,
+    "adwin_input": "batch",
+    "label_delay_days": 0.0,
+    "batch_epochs": 120,
+    "block_days": 1.0,
+    "n_seeds": 10
+  },
+  "python": "3.14.3",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "sklearn": "1.9.1",
+  "river": "0.26.1",
+  "scipy": "1.18.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware": {
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "logical_cpus": 12,
+    "memory_gb": 8.2
+  },
+  "tuning_scores": [
+    {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_leaf": 1,
+      "mean_f1": 0.433111559454411,
+      "fold_f1": [
+        0.4889,
+        0.4754,
+        0.335
+      ]
+    },
+    {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_leaf": 5,
+      "mean_f1": 0.43006543543233056,
+      "fold_f1": [
+        0.4842,
+        0.4816,
+        0.3244
+      ]
+    },
+    {
+      "n_estimators": 100,
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "mean_f1": 0.4297735963646878,
+      "fold_f1": [
+        0.4724,
+        0.4661,
+        0.3509
+      ]
+    },
+    {
+      "n_estimators": 100,
+      "max_depth": null,
+      "min_samples_leaf": 5,
+      "mean_f1": 0.4252665507561006,
+      "fold_f1": [
+        0.4551,
+        0.4934,
+        0.3273
+      ]
+    }
+  ],
+  "source": "Intel Berkeley file",
+  "command": "python -m wsnfd.run --source intel --path \"C:/Users/Amos.Sikazwe/wsnfd/data.txt\" --locs \"C:/Users/Amos.Sikazwe/wsnfd/mote_locs.txt\" --grid-s 31 --scenarios S0,S1,S2,S3,S4 --models M1,M2,M3 --seeds 10 --feature-set FS-B --fault-rate 0.2 --mag-scale 1.0 --delay-days 0.0 --trees 100 --period-days 1.0 --window-days 3.0 --adwin-delta 0.002 --cooldown 24 --tune --out results/Sens-Fault20-FS-B"
+}
